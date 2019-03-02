@@ -14,11 +14,24 @@
   </script>
 </head>
 <body>
-  <h1 align="center">FIZZ BUZZ</h1>
+  <div class="header">
+    <h1>FIZZ BUZZ</h1>
+  </div>
   <br><br><br>
+  <!-- <div class="sidenav" id="sidebar"></div> -->
   <div class="row">
-    <div class="col-4"></div>
-    <div class="col-4">
+    <div class="col-2"></div>
+      <div class="col-8">
+        <h3>Directions: </h3>
+        <p>This is a simple math game. For the current settings of this game, For each number, select "Fizz" if it is a multiple of 3, select "Buzz" if it is a multiple of 5, select "FIZZBUZZ" if it is a multiple of 3 and 5, and select "NONE" if it is multiple of neither 3 or 5.</p>
+        <p>Note: For 0, as there is no remainder when dividing by 3 or 5, it can be considered "FIZZBUZZ".</p>
+        <br><br>
+      </div>
+    <div class="col-2"></div>
+  </div>
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8" align="center">
       <div class="card" style="width: 35rem; height: 10rem;">
         <div class="card-body">
           <h5 class="card-title" align="center">NUMBER</h5>
@@ -26,18 +39,44 @@
         </div>
       </div>
     </div>
-    <div class="col-4"></div>
+    <div class="col-2"></div>
   </div>
-  <br><br><br>
+  <br>
   <div class="row">
     <div class="col-2"></div>
     <div class="col-8" align="center">
-      <button type="button" style="width: 10rem; margin-left: 8%;" class="btn btn-success" id="fizz">FIZZ</button>&nbsp;&nbsp;&nbsp;&nbsp;
-      <button type="button" style="width: 10rem; margin-left: 3%;" class="btn btn-danger" id="buzz">BUZZ</button>&nbsp;&nbsp;&nbsp;&nbsp;
-      <button type="button" style="width: 10rem; margin-left: 3%;" class="btn btn-warning" id="fizzbuzz">FIZZBUZZ</button>&nbsp;&nbsp;&nbsp;&nbsp;
-      <button type="button" style="width: 10rem; margin-left: 3%;" class="btn btn-secondary" id="none">NONE</button>
+      <button type="button" style="width: 10rem; margin-left: 8%;" class="btn btn-success" id="fizz">FIZZ</button>
+      <button type="button" style="width: 10rem; margin-left: 3%;" class="btn btn-danger" id="buzz">BUZZ</button>
     </div>
     <div class="col-2"></div>
+  </div>
+  <br><br>
+  <div class="row">
+    <div class="col-2"></div>
+      <div class="col-8" align="center">
+        <button type="button" style="width: 10rem; margin-left: 8%;" class="btn btn-warning" id="fizzbuzz">FIZZBUZZ</button>
+        <button type="button" style="width: 10rem; margin-left: 3%;" class="btn btn-secondary" id="none">NONE</button>
+      </div>
+    <div class="col-2"></div>
+  </div>
+  <br>
+  <div class="row">
+      <div class="col-sm-6" align="right">
+        <div class="card" style="width: 15rem; height: 8rem;">
+          <div class="card-body">
+            <h5 class="card-title" align="center">RIGHT</h5>
+            <h1 id="right" align="center"></h1>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6" align="left">
+        <div class="card" style="width: 15rem; height: 8rem;">
+          <div class="card-body">
+            <h5 class="card-title" align="center">WRONG</h5>
+            <h1 id="wrong" align="center"></h1>
+          </div>
+        </div>
+      </div>
   </div>
 
 

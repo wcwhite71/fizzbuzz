@@ -1,58 +1,84 @@
 $( document ).ready(function() {
-  var arr = [];
-  for (var x=0; x <= 100; x++) {
-    arr.push(x);
-  }
+  var temp;
+  var right = 0;
+  var wrong = 0;
 
-  $('#number').html(arr.shift());
-
-  // while (arr.length > 0) {
-  //
-  // }
+  temp = Math.floor(Math.random() * 101);
+  $('#number').html(temp);
 
   $("#fizz").on('click touch', function() {
     checkFizz();
+    nextNumber();
   });
 
   $("#buzz").on('click touch', function() {
     checkBuzz();
+    nextNumber();
   });
 
   $("#fizzbuzz").on('click touch', function() {
     checkFizzBuzz();
+    nextNumber();
   });
 
   $("#none").on('click touch', function() {
     checkNone();
+    nextNumber();
   });
 
 
   checkFizz = function() {
-      if (x%3 == 0) {
-        setTimeout(function(){ $('#number').html("fizz"); }, 3000);
-        $('#number').html(arr.shift());
+      if (temp%3 == 0 && temp%5 != 0) {
+        $('#number').html("Right! It's FIZZ!");
+        right++;
+        $('#right').html(right);
+      } else {
+        $('#number').html("Sorry.");
+        wrong++;
+        $('#wrong').html(wrong);
       }
+      // nextNumber();
   }
 
   checkBuzz = function() {
-      if (x%5 == 0) {
-        setTimeout(function(){ $('#number').html("buzz"); }, 3000);
-        $('#number').html(arr.shift());
+      if (temp%3 != 0 && temp%5 == 0) {
+        $('#number').html("Right! It's BUZZ!");
+        right++;
+        $('#right').html(right);
+      } else {
+        $('#number').html("Sorry.");
+        wrong++;
+        $('#wrong').html(wrong);
       }
   }
 
   checkFizzBuzz = function() {
-      if (x%3 == 0 && x%5 == 0) {
-        setTimeout(function(){ $('#number').html("fizzbuzz"); }, 3000);
-        $('#number').html(arr.shift());
+      if (temp%3 == 0 && temp%5 == 0) {
+        $('#number').html("Right! It's FIZZBUZZ!");
+        right++;
+        $('#right').html(right);
+      } else {
+        $('#number').html("Sorry.");
+        wrong++;
+        $('#wrong').html(wrong);
       }
   }
 
   checkNone = function() {
-    if (x%3 != 0 && x%5 != 0) {
-      setTimeout(function(){ $('#number').html("none"); }, 3000);
-      $('#number').html(arr.shift());
+    if (temp%3 != 0 && temp%5 != 0) {
+      $('#number').html("Right! It's none of these.");
+      right++;
+      $('#right').html(right);
+    } else {
+      $('#number').html("Sorry.");
+      wrong++;
+      $('#wrong').html(wrong);
     }
+  }
+
+  nextNumber = function() {
+    temp = Math.floor(Math.random() * 101);
+    $('#number').html(temp);
   }
 
 });
